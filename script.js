@@ -74,36 +74,41 @@ function finishSurvey(){
     let pesan = 
 `🤍 Jawaban First Date Hani 🤍
 
-⭐ 1. Overall First Date
+⭐ Pertanyaan 1: Overall First Date
 Jawaban:
 ${answers.slide3 || "-"}
 
-🥹 2. Happy Meter
+
+🥹 Pertanyaan 2: Happy Meter
 Jawaban:
 ${answers.slide4 || "-"}
 
-📸 3. Momen Favorit
+
+📸 Pertanyaan 3: Momen Favorit
 Jawaban:
 ${answers.slide5 || "-"}
 
-💌 4. Saran Next Date
+
+💌 Pertanyaan 4: Saran Next Date
 Jawaban:
 ${answers.saran || "-"}
 
-🤍 5. Second Date?
+
+🤍 Pertanyaan 5: Second Date?
 Jawaban:
 ${answers.slide7 || "-"}
 
-Makasih ya udah isi semuanya 🌷
-`;
 
+Makasih ya udah jawab semuanya 🤍
+- Ma'sum
+`;
 
     const nomor = "62895323147678";
 
-const url = "https://wa.me/" + nomor + "?text=" 
-            + encodeURIComponent(pesan);
+    const url = "https://wa.me/" + nomor + "?text=" 
+                + encodeURIComponent(pesan);
 
-window.location.href = url;
+    window.location.href = url;
 
 }
 
