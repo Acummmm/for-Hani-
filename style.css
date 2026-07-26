@@ -431,6 +431,18 @@ html{
 
 }
 
+.option.selected{
+
+    background:#FF6FA8;
+
+    color:#fff;
+
+    border:2px solid #FF6FA8;
+
+    transform:scale(1.03);
+
+        }
+
 button,
 .option,
 textarea{
