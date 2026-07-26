@@ -26,6 +26,16 @@ function showSlide(number) {
 
 // Tombol lanjut
 function nextSlide() {
+function nextSlide() {
+
+    // Kalau lagi di Slide 6, simpan isi textarea
+    if (currentSlide === 6) {
+
+        const text = document.querySelector("#slide6 textarea");
+
+        answers.saran = text.value.trim();
+
+    }
 
     if (currentSlide < totalSlide) {
 
@@ -33,10 +43,9 @@ function nextSlide() {
 
         showSlide(currentSlide);
 
-        // Scroll ke atas biar nyaman di HP
         window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+            top:0,
+            behavior:"smooth"
         });
 
     }
@@ -93,5 +102,25 @@ function selectOption(button) {
     setTimeout(() => {
         nextSlide();
     }, 350);
+
+}
+
+function finishSurvey(){
+
+    let hasil = "";
+
+    hasil += "🤍 Jawaban Hani 🤍\n\n";
+
+    hasil += "Overall : " + (answers.slide3 || "-") + "\n";
+
+    hasil += "Happy : " + (answers.slide4 || "-") + "\n";
+
+    hasil += "Favorit : " + (answers.slide5 || "-") + "\n";
+
+    hasil += "Saran : " + (answers.saran || "-") + "\n";
+
+    hasil += "Second Date : " + (answers.slide7 || "-");
+
+    alert(hasil);
 
 }
