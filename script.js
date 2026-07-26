@@ -70,7 +70,7 @@ function previousSlide() {
 }
 
 // Menyimpan pilihan user
-}function selectOption(button) {
+function selectOption(button) {
 
     const options = button.parentElement.querySelectorAll(".option");
 
