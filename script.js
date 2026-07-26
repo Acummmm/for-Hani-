@@ -26,7 +26,6 @@ function showSlide(number) {
 
 // Tombol lanjut
 function nextSlide() {
-function nextSlide() {
 
     // Kalau lagi di Slide 6, simpan isi textarea
     if (currentSlide === 6) {
@@ -71,22 +70,6 @@ function previousSlide() {
 }
 
 // Menyimpan pilihan user
-function selectOption(button) {
-
-    const options = button.parentElement.querySelectorAll(".option");
-
-    options.forEach(option => {
-        option.classList.remove("selected");
-    });
-
-    button.classList.add("selected");
-
-    answers["slide" + currentSlide] = button.innerText;
-
-    setTimeout(() => {
-        nextSlide();
-    }, 350);
-
 }function selectOption(button) {
 
     const options = button.parentElement.querySelectorAll(".option");
