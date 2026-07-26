@@ -20,6 +20,16 @@ function showSlide(number) {
 
 function nextSlide(){
 
+    // Simpan jawaban saran sebelum pindah dari slide 6
+    if(currentSlide === 6){
+
+        const text = document.querySelector("#slide6 textarea");
+
+        answers.saran = text.value.trim();
+
+    }
+
+
     if(currentSlide < totalSlide){
 
         currentSlide++;
@@ -109,15 +119,5 @@ Makasih ya udah jawab semuanya 🤍
                 + encodeURIComponent(pesan);
 
     window.location.href = url;
-
-}
-
-    hasil += "🤍 Jawaban Hani 🤍\n\n";
-
-    hasil += "Overall : " + (answers.slide3 || "-") + "\n";
-    hasil += "Happy : " + (answers.slide4 || "-") + "\n";
-    hasil += "Favorit : " + (answers.slide5 || "-") + "\n";
-
-    alert(hasil);
 
 }
