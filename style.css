@@ -1,111 +1,207 @@
+/* ===========================
+   FIRST DATE HANI
+=========================== */
+
+/* ---------- ROOT ---------- */
+
+:root{
+    --bg-1:#FFF7F8;
+    --bg-2:#FFE9F1;
+
+    --primary:#ff5d97;
+    --primary-hover:#ff3b82;
+    --title:#ff4d8d;
+    --accent:#ff72a5;
+
+    --text:#666;
+    --text-light:#999;
+    --text-footer:#aaa;
+
+    --white:#ffffff;
+
+    --radius:28px;
+    --button-radius:50px;
+
+    --shadow:0 15px 40px rgba(0,0,0,.12);
+
+    --transition:.3s ease;
+}
+
+/* ---------- RESET ---------- */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(135deg,#FFF7F8,#FFE9F1);
     min-height:100vh;
     overflow:hidden;
+
+    font-family:"Poppins",sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        var(--bg-1),
+        var(--bg-2)
+    );
 }
+
+/* ---------- LAYOUT ---------- */
 
 .container{
     width:100%;
     min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     padding:20px;
 }
 
 .card{
-    width:100%;
-    max-width:420px;
-    background:#fff;
-    border-radius:28px;
-    padding:35px 28px;
-    text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
-    animation:fade .7s ease;
     position:relative;
     z-index:2;
+
+    width:100%;
+    max-width:420px;
+
+    padding:35px 28px;
+
+    text-align:center;
+
+    background:var(--white);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    animation:fade .7s ease;
 }
+
+/* ---------- TEXT ---------- */
 
 small{
-    color:#ff72a5;
-    font-size:13px;
     display:block;
-    margin-bottom:18px;
-}
 
-.gif{
-    width:200px;
-    margin:10px auto 20px;
-    display:block;
+    margin-bottom:18px;
+
+    color:var(--accent);
+
+    font-size:13px;
 }
 
 h1{
-    color:#ff4d8d;
-    font-size:30px;
     margin-bottom:18px;
+
+    color:var(--title);
+
+    font-size:30px;
 }
 
 p{
-    color:#666;
-    line-height:1.8;
     margin-bottom:12px;
+
+    color:var(--text);
+
     font-size:15px;
+    line-height:1.8;
 }
+
+footer{
+    margin-top:25px;
+
+    color:var(--text-footer);
+
+    font-size:12px;
+}
+
+/* ---------- IMAGE ---------- */
+
+.gif{
+    display:block;
+
+    width:200px;
+
+    margin:10px auto 20px;
+}
+
+/* ---------- PROGRESS ---------- */
 
 .progress{
     margin:28px 0;
+
     font-size:22px;
 }
 
 .progress span{
     display:block;
+
     margin-top:8px;
+
+    color:var(--text-light);
+
     font-size:14px;
-    color:#999;
 }
+
+/* ---------- BUTTON ---------- */
 
 button{
     width:100%;
+
     padding:15px;
+
     border:none;
-    border-radius:50px;
-    background:#ff5d97;
-    color:#fff;
+    border-radius:var(--button-radius);
+
+    background:var(--primary);
+
+    color:var(--white);
+
     font-size:17px;
+
     cursor:pointer;
-    transition:.3s;
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
 }
 
 button:hover{
-    background:#ff3b82;
+    background:var(--primary-hover);
+
     transform:scale(1.03);
 }
 
-footer{
-    margin-top:25px;
-    color:#aaa;
-    font-size:12px;
+button:active{
+    transform:scale(.98);
 }
+
+/* ---------- HEARTS ---------- */
 
 .hearts{
     position:fixed;
     inset:0;
+
     pointer-events:none;
 }
 
 .hearts span{
     position:absolute;
+
     bottom:-100px;
+
     font-size:22px;
-    animation:float 12s linear infinite;
+
     opacity:.35;
+
+    animation:float 12s linear infinite;
 }
 
 .hearts span:nth-child(1){
@@ -132,18 +228,24 @@ footer{
     animation-delay:5s;
 }
 
+/* ---------- ANIMATION ---------- */
+
 @keyframes fade{
+
     from{
         opacity:0;
         transform:translateY(20px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 @keyframes float{
+
     from{
         transform:translateY(0) rotate(0deg);
     }
@@ -151,32 +253,27 @@ footer{
     to{
         transform:translateY(-120vh) rotate(360deg);
     }
-}
-
-@media(max-width:480px){
-
-.card{
-
-padding:28px 22px;
 
 }
 
-.gif{
+/* ---------- MOBILE ---------- */
 
-width:170px;
+@media (max-width:480px){
 
-}
+    .card{
+        padding:28px 22px;
+    }
 
-h1{
+    .gif{
+        width:170px;
+    }
 
-font-size:26px;
+    h1{
+        font-size:26px;
+    }
 
-}
-
-p{
-
-font-size:14px;
-
-}
+    p{
+        font-size:14px;
+    }
 
 }
