@@ -69,6 +69,7 @@ function previousSlide() {
 
 }
 
+
 // Menyimpan pilihan user
 function selectOption(button) {
 
