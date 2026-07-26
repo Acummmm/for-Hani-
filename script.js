@@ -64,24 +64,34 @@ function previousSlide() {
 // Menyimpan pilihan user
 function selectOption(button) {
 
-    // Cari semua tombol dalam grup yang sama
     const options = button.parentElement.querySelectorAll(".option");
 
-    // Hilangkan pilihan sebelumnya
     options.forEach(option => {
         option.classList.remove("selected");
     });
 
-    // Aktifkan pilihan baru
     button.classList.add("selected");
 
-    // Simpan jawaban sementara
     answers["slide" + currentSlide] = button.innerText;
 
-}
+    setTimeout(() => {
+        nextSlide();
+    }, 350);
 
-function showResult(){
+}function selectOption(button) {
 
-    console.log(answers);
+    const options = button.parentElement.querySelectorAll(".option");
+
+    options.forEach(option => {
+        option.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
+
+    answers["slide" + currentSlide] = button.innerText;
+
+    setTimeout(() => {
+        nextSlide();
+    }, 350);
 
 }
