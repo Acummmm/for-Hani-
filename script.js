@@ -1,3 +1,4 @@
+alert("JS KELOAD");
 let currentSlide = 1;
 const totalSlide = 8;
 let answers = {};
