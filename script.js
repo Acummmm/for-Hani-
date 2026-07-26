@@ -5,6 +5,7 @@
 
 let currentSlide = 1;
 const totalSlide = 8;
+let answers = {};
 
 // Menampilkan slide tertentu
 function showSlide(number) {
@@ -63,22 +64,24 @@ function previousSlide() {
 // Menyimpan pilihan user
 function selectOption(button) {
 
-    // Cari grup pilihan yang sama
-    const group = button.parentElement;
+    // Cari semua tombol dalam grup yang sama
+    const options = button.parentElement.querySelectorAll(".option");
 
-    // Hapus pilihan sebelumnya
-    group.querySelectorAll(".option").forEach(item => {
-        item.classList.remove("selected");
+    // Hilangkan pilihan sebelumnya
+    options.forEach(option => {
+        option.classList.remove("selected");
     });
 
     // Aktifkan pilihan baru
     button.classList.add("selected");
 
+    // Simpan jawaban sementara
+    answers["slide" + currentSlide] = button.innerText;
+
 }
 
-// Saat halaman pertama dibuka
-document.addEventListener("DOMContentLoaded", () => {
+function showResult(){
 
-    showSlide(currentSlide);
+    console.log(answers);
 
-});
+}
