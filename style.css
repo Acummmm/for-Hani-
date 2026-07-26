@@ -11,8 +11,10 @@ body{
     background:linear-gradient(135deg,#FFFDFB,#FFF3F6);
 
     min-height:100vh;
+    
+    overflow-y:auto;
 
-    overflow:hidden;
+    overflow-x:hidden;
 
 }
 
@@ -28,7 +30,7 @@ body{
 
     align-items:center;
 
-    padding:20px;
+    padding:30px 20px;
 
 }
 
