@@ -98,13 +98,12 @@ Makasih ya udah isi semuanya 🌷
 `;
 
 
-    const nomor = "62895323147678"; // ganti nomor WA Hani
+    const nomor = "62895323147678";
 
-    const url = "https://wa.me/" + nomor + "?text=" 
-                + encodeURIComponent(pesan);
+const url = "https://wa.me/" + nomor + "?text=" 
+            + encodeURIComponent(pesan);
 
-
-    window.location.href = url;
+window.location.href = url;
 
 }
 
